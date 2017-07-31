@@ -372,11 +372,9 @@ namespace afk {
   std::deque<A>
   intersection(const std::deque<A>& l, const std::deque<A>& r) {
     std::deque<A> it;
-    for (auto& e : l) {
-      if (elem(e, r)) {
-	it.push_back(e);
-      }
-    }
+    set_intersection(std::begin(l), std::end(l),
+		     std::begin(r), std::end(r),
+		     std::back_inserter(it));
     return it;
   }  
 
