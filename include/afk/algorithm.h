@@ -613,51 +613,51 @@ namespace afk {
 
   // template<typename T, unsigned long I>
   // T max_e(const std::array<T, I>& e) {
-  //   return *max_element(e.begin(), e.end());
+  //   return *std::max_element(e.begin(), e.end());
   // }
   
   template<typename T, typename F>
   T max_e(const std::vector<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::vector<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
   T max_e(const std::deque<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::deque<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
   T max_e(const std::set<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::set<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
   
   template<typename T, typename F>
   T max_e(const std::unordered_set<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::unordered_set<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
@@ -673,13 +673,13 @@ namespace afk {
 
   template<typename T, typename F>
   T max_e(const std::list<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::list<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
@@ -695,13 +695,13 @@ namespace afk {
 
   template<typename T, typename F>
   T max_e(const std::forward_list<T>& e, F f) {
-    return *max_element(begin(e), end(e),
+    return *std::max_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T max_e(const std::forward_list<T>& e) {
-    return *max_element(begin(e), end(e));
+    return *std::max_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
