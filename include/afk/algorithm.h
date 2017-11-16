@@ -4,6 +4,7 @@
 #include <array>
 #include <algorithm>
 #include <cassert>
+// Not sure this is needed
 #include <iostream>
 #include <map>
 #include <deque>
@@ -579,35 +580,35 @@ namespace afk {
 
   template<typename T, typename F>
   T min_e(const std::deque<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::deque<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
   
   template<typename T, typename F>
   T min_e(const std::vector<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::vector<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
   
   template<typename T, typename F>
   T min_e(const std::set<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::set<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
 
   // template<typename T, unsigned long I>
@@ -661,13 +662,13 @@ namespace afk {
 
   template<typename T, typename F>
   T min_e(const std::unordered_set<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::unordered_set<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
@@ -683,13 +684,13 @@ namespace afk {
 
   template<typename T, typename F>
   T min_e(const std::list<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::list<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
@@ -705,13 +706,13 @@ namespace afk {
 
   template<typename T, typename F>
   T min_e(const std::forward_list<T>& e, F f) {
-    return *min_element(begin(e), end(e),
+    return *std::min_element(begin(e), end(e),
 			[f](const T& l, const T& r) { return f(l) < f(r); });
   }
 
   template<typename T>
   T min_e(const std::forward_list<T>& e) {
-    return *min_element(begin(e), end(e));
+    return *std::min_element(begin(e), end(e));
   }
 
   template<typename T, typename F>
