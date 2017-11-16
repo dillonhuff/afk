@@ -10,7 +10,6 @@ addons:
     - g++-4.9
 
 before_install:
-  - export COREIRCONFIG="g++-4.9";
   - cmake .
   - make -j
 
