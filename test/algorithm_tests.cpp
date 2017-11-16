@@ -259,16 +259,16 @@ namespace afk {
       REQUIRE(elem(5, it));
     }
 
-    SECTION("Two deques") {
-      deque<int> set_a(a.begin(), a.end());
-      deque<int> set_b(b.begin(), b.end());
+    // SECTION("Two deques") {
+    //   deque<int> set_a(a.begin(), a.end());
+    //   deque<int> set_b(b.begin(), b.end());
 
-      deque<int> it = intersection(set_a, set_b);
+    //   deque<int> it = intersection(set_a, set_b);
 
-      REQUIRE(it.size() == 2);
-      REQUIRE(elem(1, it));
-      REQUIRE(elem(5, it));
-    }
+    //   REQUIRE(it.size() == 2);
+    //   REQUIRE(elem(1, it));
+    //   REQUIRE(elem(5, it));
+    // }
 
   }
 
