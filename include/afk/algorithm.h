@@ -1,7 +1,8 @@
-#ifndef DBHC_ALGORITHM_H
-#define DBHC_ALGORITHM_H
+#ifndef AFK_ALGORITHM_H
+#define AFK_ALGORITHM_H
 
 #include <array>
+#include <algorithm>
 #include <cassert>
 #include <iostream>
 #include <map>
@@ -480,12 +481,22 @@ namespace afk {
       std::vector<B> bs{b};
       m[a] = bs;
     } else {
-      auto elems = m[a];
+      auto& elems = m[a];
       elems.push_back(b);
-      m[a] = elems;
     }
   }
 
+  template<typename A, typename B>
+  void map_insert(std::unordered_map<A, std::vector<B>>& m, A a, B b) {
+    if (m.find(a) == std::end(m)) {
+      std::vector<B> bs{b};
+      m[a] = bs;
+    } else {
+      auto& elems = m[a];
+      elems.push_back(b);
+    }
+  }
+  
   template<typename A, typename B>
   B map_find(const A& a, const std::unordered_map<A, B>& m) {
     auto f = m.find(a);
@@ -496,18 +507,6 @@ namespace afk {
     return f->second;
   }
 
-  template<typename A, typename B>
-  void map_insert(std::unordered_map<A, std::vector<B>>& m, A a, B b) {
-    if (m.find(a) == std::end(m)) {
-      std::vector<B> bs{b};
-      m[a] = bs;
-    } else {
-      auto elems = m[a];
-      elems.push_back(b);
-      m[a] = elems;
-    }
-  }
-  
   // TODO: Make this more efficient
   template<typename T, typename F>
   std::vector<T>

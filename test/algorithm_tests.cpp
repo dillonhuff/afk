@@ -422,4 +422,31 @@ namespace afk {
       REQUIRE(v == correct);
     }
   }
+
+  TEST_CASE("Map insert") {
+
+    SECTION("map") {
+      map<int, vector<int> > vals;
+      map_insert(vals, 12, 34);
+
+      REQUIRE(vals[12].size() == 1);
+
+      map_insert(vals, 12, 45);
+
+      REQUIRE(vals[12].size() == 2);
+    }
+
+    SECTION("unordered_map") {
+      unordered_map<int, vector<int> > vals;
+      map_insert(vals, 12, 34);
+
+      REQUIRE(vals[12].size() == 1);
+
+      map_insert(vals, 12, 45);
+
+      REQUIRE(vals[12].size() == 2);
+    }
+
+  }
+
 }
